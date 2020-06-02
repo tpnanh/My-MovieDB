@@ -27,6 +27,6 @@ interface APIService {
     fun getDetailPeopleById(@Path("person_id") id: Long): Deferred<DetailPeople>
 
     @GET ("genre/movie/list?")
-    fun getGenres() : Deferred<MovieGenres>
+    fun getGenres() : Deferred<Genres>
 
 }

@@ -16,11 +16,11 @@ class FilterViewModel(application: Application) : AndroidViewModel(application) 
 
     private val coroutineScope = CoroutineScope(viewModelJob + Dispatchers.Main )
 
-    private var _getFilterGenres = MutableLiveData<ArrayList<MovieGenres>>()
-    val getFilterGenres: LiveData<ArrayList<MovieGenres>>
+    private var _getFilterGenres = MutableLiveData<ArrayList<String>>()
+    val getFilterGenres: LiveData<ArrayList<String>>
         get() = _getFilterGenres
 
-    private var _getGenre = MutableLiveData<ArrayList<String>>()
+    private var getGenre : ArrayList<String> = ArrayList()
 
     init {
         getFilterGenres()
@@ -28,9 +28,11 @@ class FilterViewModel(application: Application) : AndroidViewModel(application) 
 
     private fun getFilterGenres() {
         coroutineScope.launch {
-//            for (i in 0..filterRepository.getGenres()){
-//                print("Alo: "+filterRepository.getGenres().genres.size)
-//            }
+            for (i in 0..filterRepository.getGenres().genres.size-1){
+                getGenre.add(filterRepository.getGenres().genres[i].name)
+            }
+            _getFilterGenres.value = getGenre
+            var a = 0
         }
     }
 

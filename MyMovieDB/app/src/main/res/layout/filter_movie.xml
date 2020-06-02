@@ -31,139 +31,121 @@
             />
     </androidx.appcompat.widget.Toolbar>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Sort By"
-        android:layout_margin="9dp"
-        android:textSize="15dp"
-        android:textStyle="bold"
-        />
-
-    <RadioGroup
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="5dp">
-        <RadioButton
-            android:id="@+id/most_popular"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Most Popular"/>
-
-        <RadioButton
-            android:id="@+id/best_rated"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Best Rated"/>
-
-        <RadioButton
-            android:id="@+id/release_date"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Release Date"/>
-
-        <RadioButton
-            android:id="@+id/alphabetic_order"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Release Date"/>
-    </RadioGroup>
-
-    <View
-        android:id="@+id/view1"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:orientation="vertical"
-        android:background="@color/cardview_shadow_start_color"
-        android:layout_marginTop="9dp"
-        android:layout_marginLeft="9dp"
-        android:layout_marginRight="9dp"/>
+        android:layout_height="wrap_content">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Dates"
-        android:layout_margin="9dp"
-        android:textSize="15dp"
-        android:textStyle="bold"
-        />
-
-    <RadioGroup
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="5dp">
-
-        <CheckBox
-            android:id="@+id/in_the_theatre_right_now"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="In the theatre right now"/>
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sort By"
+                android:layout_margin="9dp"
+                android:textSize="15dp"
+                android:textStyle="bold"
+                />
 
-        <CheckBox
-            android:id="@+id/between_two_dates"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Between two dates"/>
-    </RadioGroup>
+            <RadioGroup
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp">
+                <RadioButton
+                    android:id="@+id/most_popular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Most Popular"/>
 
-    <View
-        android:id="@+id/view2"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:orientation="vertical"
-        android:background="@color/cardview_shadow_start_color"
-        android:layout_marginTop="9dp"
-        android:layout_marginLeft="9dp"
-        android:layout_marginRight="9dp"/>
+                <RadioButton
+                    android:id="@+id/best_rated"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Best Rated"/>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Genres"
-        android:layout_margin="9dp"
-        android:textSize="15dp"
-        android:textStyle="bold"
-        />
+                <RadioButton
+                    android:id="@+id/release_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Release Date"/>
 
-    <com.nex3z.flowlayout.FlowLayout
-        android:id="@+id/flow_layout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:flChildSpacing="1dp"
-        app:flChildSpacingForLastRow="align"
-        app:flRowSpacing="1dp">
+                <RadioButton
+                    android:id="@+id/alphabetic_order"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Release Date"/>
+            </RadioGroup>
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Action"/>
+            <View
+                android:id="@+id/view1"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:orientation="vertical"
+                android:background="@color/cardview_shadow_start_color"
+                android:layout_marginTop="9dp"
+                android:layout_marginLeft="9dp"
+                android:layout_marginRight="9dp"/>
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Adventure"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Dates"
+                android:layout_margin="9dp"
+                android:textSize="15dp"
+                android:textStyle="bold"
+                />
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Animation"/>
+            <RadioGroup
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp">
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Comedy"/>
+                <CheckBox
+                    android:id="@+id/in_the_theatre_right_now"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="In the theatre right now"/>
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Crime"/>
+                <CheckBox
+                    android:id="@+id/between_two_dates"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Between two dates"/>
+            </RadioGroup>
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Documentary"/>
+            <View
+                android:id="@+id/view2"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:orientation="vertical"
+                android:background="@color/cardview_shadow_start_color"
+                android:layout_marginTop="9dp"
+                android:layout_marginLeft="9dp"
+                android:layout_marginRight="9dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Genres"
+                android:layout_margin="9dp"
+                android:textSize="15dp"
+                android:textStyle="bold"
+                />
+
+            <com.nex3z.flowlayout.FlowLayout
+                android:id="@+id/flow_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:flChildSpacing="8dp"
+                app:flChildSpacingForLastRow="align"
+                app:flRowSpacing="10dp"
+                >
+
+            </com.nex3z.flowlayout.FlowLayout>
+        </LinearLayout>
+
+    </ScrollView>
 
 
-
-    </com.nex3z.flowlayout.FlowLayout>
 </LinearLayout>

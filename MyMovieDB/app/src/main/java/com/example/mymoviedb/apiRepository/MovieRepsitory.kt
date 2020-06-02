@@ -92,8 +92,8 @@ class MovieRepository (var application: Application) {
         }
     }
 
-    suspend fun getGenres(): MovieGenres{
-        var value: MovieGenres = MovieGenres(0,"")
+    suspend fun getGenres(): Genres{
+        var value: Genres = Genres(ArrayList())
         withContext(Dispatchers.IO){
             value = MovieAPI.RETROFIT_SERVICE.getGenres().await()
         }
