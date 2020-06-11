@@ -1,5 +1,6 @@
 package com.example.mymoviedb.fragment
 
+import android.app.ProgressDialog
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -29,6 +30,13 @@ class MovieFragment : Fragment() {
         var movieGridView = view.findViewById<RecyclerView>(R.id.recycler_movie)
         movieGridView.layoutManager = GridLayoutManager(activity,3,GridLayoutManager.VERTICAL,false)
 
+        val progressDialog = ProgressDialog(context)
+        progressDialog.setMessage("Loading, please wait...")
+        progressDialog.setCancelable(false)
+        progressDialog.setCanceledOnTouchOutside(true)
+        progressDialog.setInverseBackgroundForced(false)
+        progressDialog.show()
+
         adapter = MovieAdapter(ItemClick { itemImage ->
             viewModel.onClickItem(itemImage)
         })
@@ -38,6 +46,7 @@ class MovieFragment : Fragment() {
         viewModel.getPopular.observe(viewLifecycleOwner, Observer { it ->
             adapter.submitList(it)
             adapter.notifyDataSetChanged()
+            progressDialog.dismiss()
         })
 
         viewModel.navigateToDetail.observe(this, Observer { it ->

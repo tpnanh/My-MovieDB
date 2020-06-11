@@ -75,20 +75,20 @@ class DetailMovieFragment : Fragment() {
         movieActor.adapter = adapter
 
         viewModel.getMovieCredit.observe(viewLifecycleOwner, Observer { item ->
-            if (item!=null){
+          //  if (item!=null){
                 adapter.submitList(item)
                 adapter.notifyDataSetChanged()
-                viewModel.onDoneUpdateCast()
-            }
+               // viewModel.onDoneUpdateCast()
+           // }
         })
 
         viewModel.itemMovie.observe(viewLifecycleOwner, Observer { it ->
-            if (it!=null){
+            //if (it!=null){
                 if (it.id == idItem){
                     data = it
                     updateDetail(it)
-                    viewModel.onDoneUpdatedMovie()
-                }
+                    //viewModel.onDoneUpdatedMovie()
+                //}
             }
         })
 

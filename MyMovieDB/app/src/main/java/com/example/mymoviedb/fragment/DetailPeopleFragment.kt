@@ -69,7 +69,7 @@ class DetailPeopleFragment : Fragment() {
             }
         })
         backButton.setOnClickListener(View.OnClickListener {
-            activity?.onBackPressed()
+            this.findNavController().popBackStack()
         })
     }
 

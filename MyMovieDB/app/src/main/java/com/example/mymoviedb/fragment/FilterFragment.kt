@@ -1,5 +1,6 @@
 package com.example.mymoviedb.fragment
 
+import android.app.ProgressDialog
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -18,9 +19,18 @@ class FilterFragment : Fragment() {
     private lateinit var viewModel: FilterViewModel
     private lateinit var buttonBack: ImageButton
     private lateinit var flow: FlowLayout
+    private lateinit var progressDialog: ProgressDialog
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+
+        progressDialog = ProgressDialog(context)
+        progressDialog.setMessage("Loading, please wait...")
+        progressDialog.setCancelable(false)
+        progressDialog.setCanceledOnTouchOutside(true)
+        progressDialog.setInverseBackgroundForced(false)
+        progressDialog.show()
+
         var view : View = inflater.inflate(com.example.mymoviedb.R.layout.filter_movie, container, false)
 
         buttonBack = view.findViewById(com.example.mymoviedb.R.id.button_back_filter)
@@ -59,10 +69,8 @@ class FilterFragment : Fragment() {
                     }
                 })
             }
+            progressDialog.dismiss()
         })
-
-
-
     }
 
     companion object {

@@ -21,8 +21,6 @@ private val retrofit = Retrofit.Builder()
     .baseUrl(BASE_URL)
     .build()
 
-
-
 object MovieAPI {
     val RETROFIT_SERVICE: APIService by lazy {
         retrofit.create(APIService::class.java)
