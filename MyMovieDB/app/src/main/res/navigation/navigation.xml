@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.example.mymoviedb.fragment.HomeFragment"
+        android:name="com.example.mymoviedb.ui.home.HomeFragment"
         android:label="HomeFragment"
         tools:layout="@layout/home_fragment">
         <action
@@ -20,10 +20,13 @@
         <action
             android:id="@+id/action_homeFragment_to_savedMovieDetailFragment"
             app:destination="@id/savedMovieDetailFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_savedMovieDetailFragment2"
+            app:destination="@id/savedMovieDetailFragment" />
     </fragment>
     <fragment
         android:id="@+id/detailMovieFragment"
-        android:name="com.example.mymoviedb.fragment.DetailMovieFragment"
+        android:name="com.example.mymoviedb.ui.saved.detailMovie.DetailMovieFragment"
         android:label="DetailMovieFragment"
         tools:layout="@layout/fragment_movie_detail">
         <argument
@@ -37,7 +40,7 @@
     </fragment>
     <fragment
         android:id="@+id/detailPeopleFragment"
-        android:name="com.example.mymoviedb.fragment.DetailPeopleFragment"
+        android:name="com.example.mymoviedb.ui.people.detailPeople.DetailPeopleFragment"
         android:label="DetailPeopleFragment"
         tools:layout="@layout/fragment_people_detail">
         <argument
@@ -46,12 +49,12 @@
     </fragment>
     <fragment
         android:id="@+id/filterFragment"
-        android:name="com.example.mymoviedb.fragment.FilterFragment"
+        android:name="com.example.mymoviedb.ui.filter.FilterFragment"
         android:label="FilterFragment"
         tools:layout="@layout/filter_movie"/>
     <fragment
         android:id="@+id/savedMovieDetailFragment"
-        android:name="com.example.mymoviedb.fragment.SavedMovieDetailFragment"
+        android:name="com.example.mymoviedb.ui.saved.detailMovie.SavedMovieDetailFragment"
         android:label="SavedMovieDetailFragment"
         tools:layout="@layout/fragment_saved_movie_detail">
         <argument
